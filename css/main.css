@@ -56,5 +56,62 @@ body{
     left: -20px;
     position:relative;
     box-shadow: -3px -3px 6px rgb(255, 255, 255);
+    
+}
+.second-hours .circle{
+    background-color: transparent;
+    opacity: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    top: 95px;
+    margin-left: 10px;
+    animation: minimizing 1s forwards;
+}
 
+.second-hours .zero{
+    text-shadow: 0px 0px 5px rgba(255, 255, 255,0.9);
+    font-size: 60px;
+    animation: minimizing-zero 1s forwards;
+}
+.second-hours .one{
+    font-size: 60px;
+    animation: maximizing-one 1s forwards;
+}
+
+.first-min{
+    top:110px;
+}
+
+@keyframes minimizing {
+
+    50%{
+        height: 80px;
+        width: 80px;
+        left: -10px;
+        opacity: 0;
+        visibility: hidden;
+    }
+    100%{
+        top:160px;
+        height: 100px;
+        width: 100px;
+    }
+}
+@keyframes minimizing-zero {
+    50%{ 
+    text-shadow: 0px 0px 5px rgba(255, 255, 255,0);
+    }
+   
+
+    100%{
+        text-shadow: none;
+        font-size: 40px;
+    }
+    
+}
+
+@keyframes maximizing-one {
+    100%{
+        text-shadow: 0px 0px 5px rgba(255, 255, 255,0.9);
+        font-size: 60px;
+    }
 }
