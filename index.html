@@ -7,17 +7,19 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
 </head>
 
 <body>
-    <div class="clock-container">
+    
+    <div class="clock-container">            
+        
         <div class="first-hours column">
             <div class="number"><span class="circle">0</span></div>
             <div class="number">1</div>
             <div class="number">2</div>
         </div>
         <div class="second-hours column">
-            <span class="circle "></span>
             <div class="number zero">0</div>
             <div class="number one">1</div>
             <div class="number two">2</div>
@@ -28,6 +30,7 @@
             <div class="number seven">7</div>
             <div class="number eight">8</div>
             <div class="number nine">9</div>
+            <span class="second-hours-circle circle"></span>
         </div>
     <div class="first-min column">
         <div class="number zero">0</div>
@@ -76,7 +79,10 @@
         <div class="number seven">7</div>
         <div class="number eight">8</div>
         <div class="number nine">9</div>
-    </div>
+    </div><button class="button" onclick="startCirle()" >Circle!</button>
+    </div><button class="button" onclick="clickk()" >Click Me!</button>
+
+
     </div>
     <script src="js/main.js"></script>
 </body>

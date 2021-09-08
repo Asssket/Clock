@@ -1,0 +1,53 @@
+@keyframes circle-animation {
+
+    50%{
+        height: 80px;
+        width: 80px;
+        left: 0px;
+        opacity: 0;
+        /* top:var(--cp1); */
+        visibility: hidden;
+    }
+    100%{
+        top:var(--cp2);
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@keyframes circle-animationn {
+
+    50%{
+        height: 80px;
+        width: 80px;
+        left: 0px;
+        opacity: 0;
+        /* top:var(--cp1); */
+        visibility: hidden;
+    }
+    100%{
+        top:var(--cp2);
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@keyframes regress {
+    50%{ 
+    text-shadow: 0px 0px 5px rgba(255, 255, 255,0);
+    }
+   
+
+    100%{
+        text-shadow: none;
+        font-size: 40px;
+    }
+    
+}
+
+@keyframes highlighting {
+    100%{
+        text-shadow: 0px 0px 5px rgba(255, 255, 255,0.9);
+        font-size: 60px;
+    }
+}
