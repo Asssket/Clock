@@ -5,11 +5,10 @@
         width: 80px;
         left: 0px;
         opacity: 0;
-        /* top:var(--cp1); */
         visibility: hidden;
     }
     100%{
-        top:var(--cp2);
+        top:var(--circlePosition);
         height: 100px;
         width: 100px;
     }
@@ -22,11 +21,10 @@
         width: 80px;
         left: 0px;
         opacity: 0;
-        /* top:var(--cp1); */
         visibility: hidden;
     }
     100%{
-        top:var(--cp2);
+        top:var(--circlePosition);
         height: 100px;
         width: 100px;
     }

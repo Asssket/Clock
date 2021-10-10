@@ -9,9 +9,9 @@ document.querySelectorAll(
 '.second-hours div');
 var secHoursCircle = 
 document.querySelector('.second-hours-circle')
-var index = 0
-var circlePosition = 0
-var previousCirclePosition = -10
+var index = 5//5
+var  circlePosition = 66 * index
+var previousCirclePosition = 0
 var r = false
 
 
@@ -24,61 +24,72 @@ function droppingColumn(){
         { transform: 'translateY(-' + circlePosition +'px)'},
       ], {
         // timing options
-        duration: 1000,
+        duration: 600,
         iterations: 1,
         easing:"ease-in-out",
         fill: 'forwards'
       });
+      
+}
+
+function circleAnimation(){
+    // will be better in future
+    if (index % 2 == 0 ){
+        secHoursCircle.style.animation = "circle-animationn 0.6s both";
+        
+    } else{
+        secHoursCircle.style.animation = "circle-animation 0.6s both";
+    }
 }
 
 function setVar(){
-    root.style.setProperty('--previousCP', circlePosition + "px");
+    root.style.setProperty('--previousCirclePosition', circlePosition + "px");
 
 }
 
-function frame(i){
-    all[i].style.animation = "regress 0.9s forwards";
-    all[i+1].style.animation = "highlighting 0.9s forwards";
-    root.style.setProperty('--cp1', circlePosition / 2 + "px");
-    root.style.setProperty('--cp2', circlePosition + "px");
-    if (i % 2 == 0 ){
-        secHoursCircle.style.animation = "circle-animationn 1s both";
-        
+function frame(){
+    
+    if (index == 10){
+        all[9].style.animation = "regress 0.6s forwards";
+        index = 0;
+        all[0].style.animation = "highlighting 0.6s forwards";
+        previousCirclePosition = circlePosition = 0 
+        root.style.setProperty('--circlePosition', circlePosition + "px");
+        circleAnimation()
     } else{
-        secHoursCircle.style.animation = "circle-animation 1s both";
-    }
+        all[index-1].style.animation = "regress 0.6s forwards";
+        all[index].style.animation = "highlighting 0.6s forwards";
+        root.style.setProperty('--circlePosition', circlePosition + "px");
+    
+        circleAnimation()
+
     
     previousCirclePosition = circlePosition
-    
-   setTimeout(setVar,905) 
-    droppingColumn()
+    }
+
+    setTimeout(setVar,905)    
+    droppingColumn()   
+    index++;
 }
 
 function clickk(){
-    setInterval(startAnimation,1000)
-}
-function startAnimation(){
 
-    /*if (r == false){
+    if (r == false){
         r = true
+        s = setInterval(startAnimation,1000)
         }else{
-
+        clearInterval(s)
         r = false
     }
-    if (r == true){  
-        
-        //for (let i = 0; i != 10; i++) { }
-                  
-    }*/
-    circlePosition = 62 * (index + 1) + 4 * index
-    setTimeout(frame(index),1000)
 
-    index++;
-    console.log(index)
-    console.log(circlePosition)
+    
+}
+function startAnimation(){
+    circlePosition = 66 * index
+    setTimeout(frame(),1000)
+    
+
+
 
 }
 
-function startCirle(){
-    secHoursCircle.style.animationPlayState = "running";
-}

@@ -16,7 +16,7 @@ button{
     width: 100px;
 }
 :root {
-     --previousCP: -10px;  
+     --previousCirclePosition: 0px;  
 }
 
 .clock-container{
@@ -25,7 +25,8 @@ button{
     align-items: center;
 }
 .column{
-    text-overflow: ellipsis; /* will make [...] at the end */    font-family: monospace;
+    text-overflow: ellipsis; /* will make [...] at the end */    
+    font-family: monospace;
     box-shadow: -8px -8px 15px rgba(255, 255, 255,0.6),8px 8px 15px rgba(0, 0, 0,0.6);
     border-radius: 5px;
     text-align: center;
@@ -47,9 +48,9 @@ button{
 .first-hours{
     top: 250px;
 }
-.second-hours{
+/* .second-hours{ 
     top: 300px;
-}
+}*/
 .circle{
     display: flex;
     justify-content: center;
@@ -72,14 +73,11 @@ button{
     opacity: 100%;
     background: rgba(0, 0, 0, 0.1);
     left: -10px;
-    top:var(--previousCP);
+    top:var(--previousCirclePosition);
+    visibility:unset;
     /* animation: circle-animation 1s forwards paused; */
 }
 
-.second-hours .zero{ 
-    text-shadow: 0px 0px 5px rgba(255, 255, 255,0.9);
-    font-size: 60px;
-}
 
 
 
