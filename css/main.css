@@ -45,9 +45,6 @@ button{
 .number{
     padding: 10px;
 }
-.first-hours{
-    top: 250px;
-}
 /* .second-hours{ 
     top: 300px;
 }*/
@@ -73,9 +70,19 @@ button{
     opacity: 100%;
     background: rgba(0, 0, 0, 0.1);
     left: -10px;
-    top:var(--previousCirclePosition);
+    /* top:var(--previousCirclePosition); */
     visibility:unset;
     /* animation: circle-animation 1s forwards paused; */
+}
+.second-seconds-circle{
+    position: absolute;
+    background-color: transparent;
+    opacity: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    left: -10px;
+    /* top:var(--previousCirclePosition); */
+    visibility:unset;
+    top:var(--previousCirclePosition);
 }
 
 

@@ -1,24 +1,28 @@
-let root = document.documentElement;
-let d = new Date();
-let hours = d.getHours();
-let min = d.getMinutes();
-let sec = d.getSeconds();
-let secondSec = document.querySelector('.second-sec');
+let currentDate = new Date();
+let currentHours = currentDate.getHours();
+let currentMinutes = currentDate.getMinutes();
+let currentSeconds = currentDate.getSeconds();
+const secondSec = document.querySelector('.second-sec');
 /**/let all = 
 document.querySelectorAll(
-'.second-hours div');
+'.second-seconds div');
 let secHoursCircle = 
-document.querySelector('.second-hours-circle')
-let index = 5//5
-let  circlePosition = 66 * index
+document.querySelector('.second-seconds-circle')
+let index = 0//5
+let circlePosition = 66 * index
 let previousCirclePosition = 0
 let r = false
+let currentTime = {
+    hours: [Math.floor(currentHours / 10) % 10, currentHours % 10],
+    minutes:[ Math.floor(currentMinutes / 10) % 10, currentMinutes % 10],
+    seconds:[Math.floor(currentSeconds / 10) % 10, currentSeconds % 10],
+};
 
 
 
 function droppingColumn(){
     let secHoursColumn = 
-    document.querySelector('.second-hours')
+    document.querySelector('.second-seconds')
     secHoursColumn.animate([
         // keyframes
         { transform: 'translateY(-' + circlePosition +'px)'},
@@ -43,23 +47,26 @@ function circleAnimation(){
 }
 
 function setlet(){
-    root.style.setProperty('--previousCirclePosition', circlePosition + "px");
+    document.documentElement.style.setProperty('--previousCirclePosition', circlePosition + "px");
 
 }
 
 function frame(){
     
-    if (index == 10){
+    if (index == 10){ // if column is end
         all[9].style.animation = "regress 0.6s forwards";
         index = 0;
         all[0].style.animation = "highlighting 0.6s forwards";
         previousCirclePosition = circlePosition = 0 
-        root.style.setProperty('--circlePosition', circlePosition + "px");
+        document.documentElement.style.setProperty('--circlePosition', circlePosition + "px");
         circleAnimation()
-    } else{
-        all[index-1].style.animation = "regress 0.6s forwards";
+    } else {
+        if (index !== 0){
+            all[index - 1].style.animation = "regress 0.6s forwards";
+        }
+        
         all[index].style.animation = "highlighting 0.6s forwards";
-        root.style.setProperty('--circlePosition', circlePosition + "px");
+        document.documentElement.style.setProperty('--circlePosition', circlePosition + "px");
     
         circleAnimation()
 
@@ -76,6 +83,7 @@ function clickk(){
 
     if (r == false){
         r = true
+        index = currentSeconds % 10;
         s = setInterval(startAnimation,1000)
         }else{
         clearInterval(s)
@@ -85,11 +93,9 @@ function clickk(){
     
 }
 function startAnimation(){
+
+    console.log(currentTime);
     circlePosition = 66 * index
     setTimeout(frame(),1000)
-    
-
-
-
 }
-
+//clickk();
