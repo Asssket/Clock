@@ -1,23 +1,23 @@
 let root = document.documentElement;
-var d = new Date();
-var hours = d.getHours();
-var min = d.getMinutes();
-var sec = d.getSeconds();
-var secondSec = document.querySelector('.second-sec');
-/**/var all = 
+let d = new Date();
+let hours = d.getHours();
+let min = d.getMinutes();
+let sec = d.getSeconds();
+let secondSec = document.querySelector('.second-sec');
+/**/let all = 
 document.querySelectorAll(
 '.second-hours div');
-var secHoursCircle = 
+let secHoursCircle = 
 document.querySelector('.second-hours-circle')
-var index = 5//5
-var  circlePosition = 66 * index
-var previousCirclePosition = 0
-var r = false
+let index = 5//5
+let  circlePosition = 66 * index
+let previousCirclePosition = 0
+let r = false
 
 
 
 function droppingColumn(){
-    var secHoursColumn = 
+    let secHoursColumn = 
     document.querySelector('.second-hours')
     secHoursColumn.animate([
         // keyframes
@@ -42,7 +42,7 @@ function circleAnimation(){
     }
 }
 
-function setVar(){
+function setlet(){
     root.style.setProperty('--previousCirclePosition', circlePosition + "px");
 
 }
@@ -67,7 +67,7 @@ function frame(){
     previousCirclePosition = circlePosition
     }
 
-    setTimeout(setVar,905)    
+    setTimeout(setlet,905)    
     droppingColumn()   
     index++;
 }
